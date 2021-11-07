@@ -1,0 +1,60 @@
+body {
+    background:
+    url('images/bg.png') repeat;
+    color: white;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.page-wrapper {
+    position: absolute;
+    left: calc(50% - 300px);
+    top: calc(50% - 200px);
+
+    width: 600px;
+    height: 400px;
+    
+    }
+
+.weite {
+    width: 200px;
+}
+
+.Titeltext h1 {
+    position: absolute;
+    top: 60px;
+    left: 60px;
+
+    color: white;
+    font-size: 30px;
+}
+
+.routenspalte {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    column-gap: 20px;
+
+    width: 480px;
+    height: 80px;
+
+    position: relative;
+    left: 60px;
+    top: -250px;
+}
+
+.herzspalte {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+    column-gap: 20px;
+
+    width: 480px;
+    height: 100px;
+
+    position: relative;
+    left: 60px;
+    top: -230px;
+}
+
