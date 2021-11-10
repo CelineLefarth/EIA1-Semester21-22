@@ -147,7 +147,3 @@ var AUD : number = Math.round(100*(f - f_2008))/100;
 console.log('Die Emission von Australien ist: ' + f + 'kg CO2. Relativ zur Gesamtemmission der Welt verursacht Australien damit '
 + AU '%. Für Australien hat sich 2018 im Vergleich zu 2008 die Emission um ' + AUV + '% verändert. Im Vergleich zu 2008 sind das '
 + AUD + 'kg CO2.');
-
-
-
-
