@@ -19,7 +19,6 @@ var d : number = 6035.6;
 var d_2008 : number = 6600.4;
 
 /*Asien*/
-
 var e : number = 16274.1;
 var e_2008 : number = 12954.7;
 
@@ -50,8 +49,9 @@ var ED : number = Math.round(100*(c - c_2008))/100;
 /*Europa Konsole*/
 
 console.log('Die Emission von Europa ist: ' + c + 'kg CO2. Relativ zur Gesamtemmission der Welt verursacht Europa damit '
-+ E '%. Für Europa hat sich 2018 im Vergleich zu 2008 die Emission um ' + EV + '% verändert. Im Vergleich zu 2008 sind das '
-+ ED + 'kg CO2.');
++ E + '%.')
+console.log('Für Europa hat sich 2018 im Vergleich zu 2008 die Emission um ' + EV + '% verändert.')
+console.log('Im Vergleich zu 2008 sind das ' + ED + 'kg CO2.')
 
 
 
@@ -69,8 +69,9 @@ var NV : number = Math.round(100*(((d/d_2008)*100)-100))/100;
 var ND : number = Math.round(100* (d - d_2008))/100;
 
 console.log('Die Emission von Nordamerika ist: ' + d + 'kg CO2. Relativ zur Gesamtemmission der Welt verursacht Nordamerika damit '
-+ N '%. Für Nordamerika hat sich 2018 im Vergleich zu 2008 die Emission um ' + NV + '% verändert. Im Vergleich zu 2008 sind das '
-+ ND + 'kg CO2.');
++ N + '%.')
+console.log('Für Nordamerika hat sich 2018 im Vergleich zu 2008 die Emission um ' + NV + '% verändert.')
+console.log('Im Vergleich zu 2008 sind das ' + ND + 'kg CO2.')
 
 
 
@@ -89,8 +90,9 @@ var SV : number = Math.round(100*(((b/b_2008)*100)-100))/100;
 var SD : number = Math.round(100*(b - b_2008))/100;
 
 console.log('Die Emission von Südamerika ist: ' + b + 'kg CO2. Relativ zur Gesamtemmission der Welt verursacht Südamerika damit '
-+ S '%. Für Südamerika hat sich 2018 im Vergleich zu 2008 die Emission um ' + SV + '% verändert. Im Vergleich zu 2008 sind das '
-+ SD + 'kg CO2.');
++ S + '%.')
+console.log('Für Südamerika hat sich 2018 im Vergleich zu 2008 die Emission um ' + SV + '% verändert.')
+console.log('Im Vergleich zu 2008 sind das ' + SD + 'kg CO2.')
 
 
 
@@ -108,8 +110,9 @@ var AFV : number = Math.round(100*(((a/a_2008)*100)-100))/100;
 var AFD : number = Math.round(100*(a - a_2008))/100;
 
 console.log('Die Emission von Afrika ist: ' + a + 'kg CO2. Relativ zur Gesamtemmission der Welt verursacht Afrika damit '
-+ AF '%. Für Afrika hat sich 2018 im Vergleich zu 2008 die Emission um ' + AFV + '% verändert. Im Vergleich zu 2008 sind das '
-+ AFD + 'kg CO2.');
++ AF + '%.')
+console.log('Für Afrika hat sich 2018 im Vergleich zu 2008 die Emission um ' + AFV + '% verändert.')
+console.log('Im Vergleich zu 2008 sind das ' + AFD + 'kg CO2.')
 
 
 /*Rechnung Asien*/
@@ -126,8 +129,9 @@ var ASV : number = Math.round(100*(((e/e_2008)*100)-100))/100;
 var ASD : number = Math.round(100* (e - e_2008))/100;
 
 console.log('Die Emission von Asien ist: ' + e + 'kg CO2. Relativ zur Gesamtemmission der Welt verursacht Asien damit '
-+ AS '%. Für Asien hat sich 2018 im Vergleich zu 2008 die Emission um ' + ASV + '% verändert. Im Vergleich zu 2008 sind das '
-+ ASD + 'kg CO2.');
++ AS + '%.')
+console.log('Für Asien hat sich 2018 im Vergleich zu 2008 die Emission um ' + ASV + '% verändert.')
+console.log('Im Vergleich zu 2008 sind das ' + ASD + 'kg CO2.')
 
 
 
@@ -145,5 +149,6 @@ var AUV : number = Math.round(100*(((f/f_2008)*100)-100))/100;
 var AUD : number = Math.round(100*(f - f_2008))/100;
 
 console.log('Die Emission von Australien ist: ' + f + 'kg CO2. Relativ zur Gesamtemmission der Welt verursacht Australien damit '
-+ AU '%. Für Australien hat sich 2018 im Vergleich zu 2008 die Emission um ' + AUV + '% verändert. Im Vergleich zu 2008 sind das '
-+ AUD + 'kg CO2.');
++ AU + '%.')
+console.log('Für Australien hat sich 2018 im Vergleich zu 2008 die Emission um ' + AUV + '% verändert.')
+console.log('Im Vergleich zu 2008 sind das ' + AUD + 'kg CO2.')
