@@ -22,7 +22,7 @@ window.addEventListener('load', function () {
     document.querySelector('#btn7').addEventListener('click', function () { playSample(laugh2); });
     document.querySelector('#btn8').addEventListener('click', function () { playSample(snare); });
     /*Drum Machine*/
-    document.querySelector("#drumMachine").addEventListener('click', function () {
+    document.querySelector("#drumMachine").addEventListener('onclick', function () {
         setInterval(function playBeat() {
             var sequence = new Audio(beat[key]);
             sequence.play();

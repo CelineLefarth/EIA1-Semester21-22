@@ -1,0 +1,79 @@
+body {
+    background-color: black;
+    font-size: medium;
+}
+
+div {
+    margin: auto;
+    width: 500px;   
+    }
+
+button {
+    height: 150px;
+    width: 150px;
+    margin: 6px;
+    border-radius: 20px;
+    border-style:none;
+}
+
+#btn, #btn1, #btn2 {
+    background-image: linear-gradient(to bottom, #ee8ab7, #e94592);
+}
+
+#btn3, #btn4, #btn5, #btn6 {
+    background-image: linear-gradient(to bottom, #f1aa52, #e0861f);
+}
+
+#btn7, #btn8 {
+    background-image: linear-gradient(to bottom, #508ac8, #3461ac);
+}
+
+button:hover{
+ transform: scale(0.9);
+ transition: all .6s ease-in-out;
+}
+
+button:active {
+    transform: scale(1);
+    transition: all .1s ease-in-out;
+}
+
+
+img {
+    position: relative;
+    margin-left: 154px;
+}
+
+h1 {
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    position: relative;
+    top: 30px;
+    left: 42%;
+}
+
+
+#play, #random, #delete {
+    color: #ffffff;
+    transform: scale(4);
+    margin: 50px;
+    position: relative;
+    left: 70px;
+}
+
+#play:hover, #random:hover, #delete:hover {
+    color: #e0861f;
+    transition: all .3s ease-in-out;
+    transform: scale(3.4);
+}
+
+#play:active, #random:active, #delete:active {
+    color: #e0861f;
+    transition: all .1s ease-in-out;
+    transform: scale(4.0);
+}
