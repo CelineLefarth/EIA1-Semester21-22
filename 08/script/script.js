@@ -14,6 +14,8 @@ var Aufgabe08;
     let audio = [kick, snare, hihat, Aton, Cton, Fton, Gton, laugh1, laugh2];
     var remix;
     var beatmix;
+    let beat = ['assets/kick.mp3', 'assets/snare.mp3', 'assets/hihat.mp3'];
+    var key = 0;
     /*Klicken*/
     window.addEventListener('load', function () {
         document.querySelector('#btn').addEventListener('click', function () { playSample(snare); });
@@ -35,17 +37,18 @@ var Aufgabe08;
         ;
         /* Schleife Beat*/
         function playBeat() {
-            for (var i = 0; i <= 2; i++) {
-                playSample(audio[i]);
-            }
-            ;
+            var sequence = new Audio(beat[key]);
+            sequence.play();
+            key += 1;
+            if (key > 3)
+                key = 0;
         }
         ;
         /*Stop und PlayButton */
         function playstop() {
             if (document.querySelector("#play").getAttribute("class") == "far fa-play-circle") {
                 document.querySelector("#play").setAttribute("class", "far fa-stop-circle");
-                beatmix = setInterval(playBeat, 280);
+                beatmix = setInterval(playBeat, 480);
                 clearInterval(remix); //Damit der remix button nicht läuft während der play button geklickt wird
             }
             else {
@@ -76,7 +79,7 @@ var Aufgabe08;
         /*delete button*/
         function deletebutton() {
             clearInterval(remix);
-            clearInterval(beatmix);
+            beat.length = 0;
             if (document.querySelector("#play").getAttribute("class") == "far fa-stop-circle") {
                 document.querySelector("#play").setAttribute("class", "far fa-play-circle");
             }

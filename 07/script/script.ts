@@ -30,7 +30,7 @@ window.addEventListener('load', function (){
     
 /*Drum Machine*/   
     
-    document.querySelector("#drumMachine").addEventListener('onclick', function (){
+    document.querySelector("#drumMachine").addEventListener('click', function (){
     
     setInterval(
         function playBeat (){
