@@ -1,0 +1,51 @@
+body {
+    background:
+    url('images/bg.png') repeat;
+
+}
+
+.page-wrapper {
+    position: absolute;
+    left: calc(50% - 300px);
+    top: calc(50% - 200px);
+
+    width: 600px;
+    height: 400px;
+    
+    }
+
+.Titeltext h1 {
+    position: absolute;
+    top: 20px;
+    left: 60px;
+
+    color: white;
+    font-size: 30px;
+}
+
+.Fließtext h2 {
+    position: absolute;
+    top:150px;
+    left: 60px;
+
+    margin-right: 70px;
+
+    color: white;
+    font-size: 17px;
+    font-weight: lighter;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.busch {
+    position: relative;
+    margin-top: -460px;
+    margin-left: -80px;
+
+
+}
+
+.penguin {
+    position: relative;
+    margin-left: 550px;
+    margin-top: 90px;
+}
