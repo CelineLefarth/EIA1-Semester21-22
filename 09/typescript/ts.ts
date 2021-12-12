@@ -66,7 +66,7 @@ namespace Aufgabe09 {
             //Erledigt Button anklickbar
             completedButton.addEventListener("click", function () {
                 if (completedButton.getAttribute("class") == "far fa-square") {
-                    completedButton.setAttribute("class", "fa fa-check-square");
+                    completedButton.setAttribute("class", "fa fa-check-square"); 
                 }
 
                 else {
