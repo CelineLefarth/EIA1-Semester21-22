@@ -125,10 +125,11 @@ footer a:hover {
     background: none;
     color: white;
     border-style: none;
+    font-size: 17px;
 }
 
 #Spracheingabe button:hover {
-    color: #6f48c9;
+    color: #6f48c9;    
 }
 
 div {
