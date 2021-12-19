@@ -1,14 +1,18 @@
 var Aufgabe09;
 (function (Aufgabe09) {
     window.addEventListener('load', function () {
+        //HTML Datei Wertezuweisung
         const todoInput = document.querySelector(".todo-input");
         const todoButton = document.querySelector(".todo-button");
         const todoList = document.querySelector(".todo-list");
         let Aufgabenzähler = 0;
+        //Klicken Funktion AddTodo
         todoButton.addEventListener("click", addTodo);
+        //Aufgabenzähler
         function counter() {
             document.querySelector("span").innerHTML = String(Aufgabenzähler);
         }
+        //Damit 0 Aufgaben dasteht
         counter();
         //Functions
         function addTodo(e) {
@@ -38,11 +42,13 @@ var Aufgabe09;
             todoList.appendChild(todoDiv);
             //ToDo Input nach eingabe leeren
             todoInput.value = "";
+            //Klick Löschen von Aufgabe
             trashButton.addEventListener("click", function () {
                 todoList.removeChild(todoDiv);
                 Aufgabenzähler--;
                 counter();
             });
+            //Erledigt Button anklickbar
             completedButton.addEventListener("click", function () {
                 if (completedButton.getAttribute("class") == "far fa-square") {
                     completedButton.setAttribute("class", "fa fa-check-square");

@@ -9,15 +9,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="Stylesheet/Css.css">
     <script src="typescript/ts.js"></script>
+    <script src="typescript/Artyom.js"></script>
 </head>
 <body>
     <header>
         <h1>Celine's Todo Liste</h1>
     </header>
         <h2>
-            <span id="counter"></span> &nbsp;Aufgaben insgesamt
-        </h2>
+            <div id="Counter"><span id="countertotal"></span>&nbsp;total</div>
+            <div id="Counter"><span id="counteropen"></span>&nbsp;open</div>
+            <div id="Counter"><span id="counterdone"></span>&nbsp;done</div> 
+        </h2> 
+        <div id="Spracheingabe"><button id="Artyom">Sag "Erstelle Aufgabe..." <i id="mic" class="fas fa-microphone"></i></button></div>
     <form>
+        
         <input type="text" class="todo-input" placeholder="Add a task..." ></input>
         <button class="todo-button" type="submit">
             <i class="fas fa-plus-square"></i>
@@ -28,9 +33,5 @@
         <ul class="todo-list"> 
         </ul>
     </div>
-
-    <footer>
-        <a href="images/Flowchart_Zeichenfläche 1.jpg" target="blank">Flowchart</a>
-    </footer>
 </body>
 </html>
