@@ -1,6 +1,6 @@
 var Aufgabe10;
 (function (Aufgabe10) {
-    window.addEventListener('load', function () {
+    window.addEventListener("load", function () {
         //HTML Datei Wertezuweisung
         const todoInput = document.querySelector(".todo-input");
         const todoButton = document.querySelector(".todo-button");
@@ -84,19 +84,16 @@ var Aufgabe10;
                 counterOpen();
                 counterDone();
             });
-            let artyom = new Artyom();
-            let mic = false;
+            const artyom = new Artyom();
             artyom.addCommands({
-                // 
-                indexes: ["Erstelle Aufgabe *"],
+                indexes: ["erstelle Aufgabe *"],
                 smart: true,
-                action: function (i, spracheingabe) {
-                    input.value = spracheingabe;
-                    addTodo(e);
+                action: function (i, wildcard) {
+                    //toDo anlegen wenn "erstelle Aufgabe" gesagt wurde
+                    addTodo(wildcard);
                 }
             });
-            // Fkt die Aufnehmen startet
-            function voiceRecording() {
+            function startContinuousArtyom() {
                 artyom.fatality();
                 setTimeout(function () {
                     artyom.initialize({
@@ -105,19 +102,16 @@ var Aufgabe10;
                         listen: true,
                         interimResults: true,
                         debug: true
+                    }).then(function () {
+                        console.log("Ready!");
                     });
                 }, 250);
             }
-            // Eventlistener für das Mikro 
-            document.querySelector(".fa-microphone").addEventListener("click", function () {
-                if (!mic) {
-                    voiceRecording();
-                    mic = true;
-                }
-                else {
-                    artyom.fatality();
-                    mic = false;
-                }
+            //Spracheingabe funktioniert nur bei Klick auf den entsprechenden Button
+            document.querySelector("#Artyom").addEventListener("click", function () {
+                startContinuousArtyom();
+                //Spracheingabe Button wird disabled, damit die Soracheingabe nicht mehrfach gestartet werden kann
+                document.querySelector("#Artyom").disabled = true;
             });
         }
     });

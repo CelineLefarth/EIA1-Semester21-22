@@ -1,6 +1,7 @@
 namespace Aufgabe10 {
     declare var Artyom: any;
-    window.addEventListener('load', function () {
+    window.addEventListener("load", function(): void {
+    
 
         //HTML Datei Wertezuweisung
         const todoInput = document.querySelector(".todo-input") as HTMLInputElement;
@@ -102,53 +103,45 @@ namespace Aufgabe10 {
             counterDone();
     
             });
-
-        
-    let artyom: any = new Artyom();
-    let mic: boolean = false;
     
-    artyom.addCommands({
-        // 
-        indexes: ["Erstelle Aufgabe *"],
-        smart: true,
-        
-        action: function(i: any, spracheingabe: string): void {
-            input.value = spracheingabe;
-            addTodo(e);
-        }
-    });
+        const artyom: any = new Artyom();
 
-    // Fkt die Aufnehmen startet
-    function voiceRecording(): void {
-        artyom.fatality ();
-        setTimeout(
-            function(): void {
-                artyom.initialize({
-                    lang: "de-DE",
-                    continuous: true,
-                    listen: true,
-                    interimResults: true,
-                    debug: true
-                });
-            },
-            250);
-    }
-
-    // Eventlistener für das Mikro 
-    document.querySelector(".fa-microphone").addEventListener("click", function(): void {
-        if (!mic) {
-            voiceRecording();
-            mic = true; 
-        } else {
+        artyom.addCommands({
+            indexes: ["erstelle Aufgabe *"],
+            smart: true,
+            action: function (i: any, wildcard: string): void {
+                //toDo anlegen wenn "erstelle Aufgabe" gesagt wurde
+                addTodo(wildcard);
+            }
+        });
+    
+        function startContinuousArtyom(): void {
             artyom.fatality();
-            mic = false;
+    
+            setTimeout(
+                function (): void {
+                    artyom.initialize({
+                        lang: "de-DE",
+                        continuous: true,
+                        listen: true,
+                        interimResults: true,
+                        debug: true
+                    }).then(function (): void {
+                        console.log("Ready!");
+                    });
+                },
+                250);
         }
-    });
-
-
-
-        }
-
-
-    })
-}
+        //Spracheingabe funktioniert nur bei Klick auf den entsprechenden Button
+        document.querySelector("#Artyom").addEventListener("click", function (): void {
+            startContinuousArtyom();
+            //Spracheingabe Button wird disabled, damit die Soracheingabe nicht mehrfach gestartet werden kann
+            (document.querySelector("#Artyom") as HTMLButtonElement).disabled = true;
+        });
+    }
+    
+    
+    
+    
+    
+    })}
