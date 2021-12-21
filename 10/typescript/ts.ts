@@ -34,7 +34,7 @@ namespace Aufgabe10 {
         counterDone();
 
         //Functions
-        function addTodo(e: any) {
+        function addTodo(e: any | string) {
 
             countertotal++;
             counterTotal();
@@ -89,7 +89,7 @@ namespace Aufgabe10 {
                 counterDone();
             });
         
-        completedButton.addEventListener("click", function (event: Event): void {
+        completedButton.addEventListener("click", function (): void {
             let checken: boolean = completedButton.checked;
     
             if (checken === true) {
@@ -103,10 +103,9 @@ namespace Aufgabe10 {
             counterDone();
     
             });
-    
-        //Spracheingabe mit Artyom
+     
 
-    // Variable für Mic und artyom
+
     let artyom: any = new Artyom();
     let mic: boolean = false;
     
@@ -114,13 +113,10 @@ namespace Aufgabe10 {
         // 
         indexes: ["erstelle Aufgabe *"],
         smart: true,
-        // Alles was nach "erstelle Aufgabe" gesagt wird, wird als ToDo Inhalt empfangen
+        
         action: function(i: any, spracheingabe: string): void {
-            input.value = spracheingabe;
-            // Nach aufnehmen der Aufgabe wird das gesagte sprachlich wiedergegeben
-            artyom.say("Neue Aufgabe" + spracheingabe + "wird erstellt");
-            // newTask Fkt ausführen um neues Element mit neuer ToDo zu generieren
-            addTodo(e);
+            todoInput.value = spracheingabe;            
+            addTodo(spracheingabe);
         }
     });
 
@@ -141,7 +137,7 @@ namespace Aufgabe10 {
     }
 
     // Eventlistener für das Mikro 
-    document.querySelector(".fa-microphone").addEventListener("click", function(): void {
+    document.querySelector("#Artyom").addEventListener("click", function(): void {
         if (!mic) {
             voiceRecording();
             mic = true; 
@@ -149,11 +145,7 @@ namespace Aufgabe10 {
             artyom.fatality();
             mic = false;
         }
-    });
-    }
-    
-    
-    
-    
-    
-    })}
+    });    
+
+
+        }})} 
