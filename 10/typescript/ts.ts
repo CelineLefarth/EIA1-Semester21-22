@@ -7,13 +7,13 @@ namespace Aufgabe10 {
         const todoInput = document.querySelector(".todo-input") as HTMLInputElement;
         const todoButton = document.querySelector(".todo-button");
         const todoList = document.querySelector(".todo-list");
+        const artyom: any = new Artyom();
         
 
         let countertotal: number = 0;
         let counteropen: number = 0;
         let counterdone: number = 0;
 
-        let input: HTMLInputElement = document.querySelector("#textfield");
 
         //Klicken Funktion AddTodo
         todoButton.addEventListener("click", addTodo);
@@ -105,50 +105,37 @@ namespace Aufgabe10 {
     
             });
      
-
-
-    let artyom: any = new Artyom();
-    let mic: boolean = false;
     
     artyom.addCommands({
-        // 
         indexes: ["erstelle Aufgabe *"],
         smart: true,
-        
-        action: function(i: any, spracheingabe: string): void {
-            input.value = spracheingabe;
-            addTodo(spracheingabe)
-            document.querySelector("input").value = "";
-
-            
-        }
-    });
+        action: function (i: any, wildcard: string): void {
+            const newTodo = document.createElement("li");
+            newTodo.classList.add("todo-item");
+            newTodo.innerHTML = wildcard;
+            todoDiv.appendChild(newTodo);
     
-    // Fkt die Aufnehmen startet
-    function voiceRecording(): void {
-        artyom.fatality ();
-        setTimeout(
-            function(): void {
-                artyom.initialize({
-                    lang: "de-DE",
-                    continuous: true,
-                    listen: true,
-                    interimResults: true,
-                    debug: true
-                });
-            },
-            250);
-    }
+    
+            function startContinuousArtyom(): void {
+                artyom.fatality();
+            
+                setTimeout(
+                    function (): void {
+                        artyom.initialize({
+                            lang: "de-DE",
+                            continuous: true,
+                            listen: true,
+                            interimResults: true,
+                            debug: true
+                        }).then(function (): void {
+                            console.log("Ready!");
+                        });
+                    },
+                    250);
+            }
+            /*Spracheingabe durch Klick auf Button möglich*/
+            document.querySelector("#Artyom").addEventListener("click", function (): void {
+                startContinuousArtyom();
+            });
 
-    // Eventlistener für das Mikro 
-    document.querySelector("#Artyom").addEventListener("click", function(): void {
-        if (!mic) {
-            voiceRecording();
-            mic = true; 
-        } else {
-            artyom.fatality();
-            mic = false;
-        }
-    });
-
-        }})} 
+        }})}})} 
