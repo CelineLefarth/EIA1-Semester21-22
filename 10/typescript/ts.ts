@@ -7,6 +7,7 @@ namespace Aufgabe10 {
         const todoInput = document.querySelector(".todo-input") as HTMLInputElement;
         const todoButton = document.querySelector(".todo-button");
         const todoList = document.querySelector(".todo-list");
+        
 
         let countertotal: number = 0;
         let counteropen: number = 0;
@@ -115,8 +116,11 @@ namespace Aufgabe10 {
         smart: true,
         
         action: function(i: any, spracheingabe: string): void {
-            input.value = spracheingabe;            
-            addTodo_2();
+            input.value = spracheingabe;
+            addTodo(spracheingabe)
+            document.querySelector("input").value = "";
+
+            
         }
     });
     
@@ -145,78 +149,6 @@ namespace Aufgabe10 {
             artyom.fatality();
             mic = false;
         }
-    });  
-    
-    
-        //Functions
-        function addTodo_2() {
+    });
 
-        countertotal++;
-        counterTotal();
-
-        counteropen++;
-        counterOpen();
-
-        //prevent form from submitting
-        e.preventDefault();
-
-        //Todo DIV
-        const todoDiv = document.createElement("div");
-        todoDiv.classList.add("todo");
-
-        //Erledigt Button
-        let completedButton = document.createElement("input");
-        completedButton.classList.add("complete-btn");
-        completedButton.type = "checkbox";
-        completedButton.className = "checkBox";
-        todoDiv.appendChild(completedButton);
-
-        //Listen Element, Eingabe
-        const newTodo = document.createElement("li");
-        newTodo.classList.add("todo-item");
-        newTodo.innerHTML = input.value;
-        todoDiv.appendChild(newTodo);
-
-        //Lösch Button
-        const trashButton = document.createElement("button");
-        trashButton.classList.add("trash-btn");
-        trashButton.setAttribute("class", "fas fa-trash");
-        todoDiv.appendChild(trashButton);
-
-        //Div als Child von todoList
-        todoList.appendChild(todoDiv);
-
-
-        //ToDo Input nach eingabe leeren
-        todoInput.value = "";
-
-        //Klick Löschen von Aufgabe
-        trashButton.addEventListener("click", function () {
-            todoList.removeChild(todoDiv); countertotal--; counterTotal();
-
-            if (completedButton.checked === true) {
-                counterdone--;
-            }
-            else {
-                counteropen--;
-            }
-            counterOpen();
-            counterDone();
-        });
-    
-    completedButton.addEventListener("click", function (): void {
-        let checken: boolean = completedButton.checked;
-
-        if (checken === true) {
-            counterdone++;
-            counteropen--;
-        } else {
-            counterdone--;
-            counteropen++;
-        }
-        counterOpen();
-        counterDone();
-
-        });
-
-        }}})} 
+        }})} 

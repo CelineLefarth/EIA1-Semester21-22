@@ -71,7 +71,7 @@ var Aufgabe10;
                 counterOpen();
                 counterDone();
             });
-            completedButton.addEventListener("click", function (event) {
+            completedButton.addEventListener("click", function () {
                 let checken = completedButton.checked;
                 if (checken === true) {
                     counterdone++;
@@ -84,16 +84,20 @@ var Aufgabe10;
                 counterOpen();
                 counterDone();
             });
-            const artyom = new Artyom();
+            let artyom = new Artyom();
+            let mic = false;
             artyom.addCommands({
+                // 
                 indexes: ["erstelle Aufgabe *"],
                 smart: true,
-                action: function (i, wildcard) {
-                    //toDo anlegen wenn "erstelle Aufgabe" gesagt wurde
-                    addTodo(wildcard);
+                action: function (i, spracheingabe) {
+                    input.value = spracheingabe;
+                    addTodo(spracheingabe);
+                    document.querySelector("input").value = "";
                 }
             });
-            function startContinuousArtyom() {
+            // Fkt die Aufnehmen startet
+            function voiceRecording() {
                 artyom.fatality();
                 setTimeout(function () {
                     artyom.initialize({
@@ -102,16 +106,19 @@ var Aufgabe10;
                         listen: true,
                         interimResults: true,
                         debug: true
-                    }).then(function () {
-                        console.log("Ready!");
                     });
                 }, 250);
             }
-            //Spracheingabe funktioniert nur bei Klick auf den entsprechenden Button
+            // Eventlistener für das Mikro 
             document.querySelector("#Artyom").addEventListener("click", function () {
-                startContinuousArtyom();
-                //Spracheingabe Button wird disabled, damit die Soracheingabe nicht mehrfach gestartet werden kann
-                document.querySelector("#Artyom").disabled = true;
+                if (!mic) {
+                    voiceRecording();
+                    mic = true;
+                }
+                else {
+                    artyom.fatality();
+                    mic = false;
+                }
             });
         }
     });
